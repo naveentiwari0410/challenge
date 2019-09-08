@@ -1,7 +1,6 @@
 import requests 
 from bs4 import BeautifulSoup 
 from datetime import datetime, timedelta
-from csv_operation import  CSVOperation
 MONTH = {
     'Jan':1,
     'Feb':2,
@@ -88,7 +87,3 @@ class NaturalGasSpotPrice():
                 begin=0
         return list_data
 
-scrap_data = NaturalGasSpotPrice('monthly')
-data = scrap_data.get_data()
-csv_obj = CSVOperation('monthly1.csv', ['date', 'price'])
-csv_obj.write(data)
